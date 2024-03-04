@@ -1,16 +1,16 @@
 ﻿using System.Diagnostics.Eventing.Reader;
 using Microsoft.AspNetCore.Mvc;
 using System.Drawing.Text;
-using System.IdentityModel.Tokens.Jwt;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using Microsoft.EntityFrameworkCore;
 using Mysqlx;
+using BCrypt.Net;
 
 namespace MovieSpin_Backend_Files
 {
-   
+
     [ApiController]
     [Route("api/[controller]")]
     public class UsersController : ControllerBase
@@ -21,7 +21,7 @@ namespace MovieSpin_Backend_Files
         public UsersController(Dbconnection context)
         {
 
-            _Context = context; 
+            _Context = context;
 
         }
 
@@ -33,10 +33,12 @@ namespace MovieSpin_Backend_Files
         {
             try
             {
+                string hashedpassword = BCrypt.Net.BCrypt.HashPassword(user.Password);
+                user.Password = hashedpassword;
                 var existingUsername = _Context.Users.FirstOrDefault(x => x.Username == user.Username);
                 var existingEmail = _Context.Users.FirstOrDefault(x => x.Email == user.Email);
 
-                if (existingUsername != null) 
+                if (existingUsername != null)
                 {
                     return Conflict("Existing username already exists");
                 }
@@ -51,7 +53,7 @@ namespace MovieSpin_Backend_Files
                     _Context.SaveChanges();
                     return Ok("User registered");
                 }
-       
+
             }
             catch (Exception ex)
             {
@@ -64,17 +66,24 @@ namespace MovieSpin_Backend_Files
 
 
         [HttpPost("Login")]
-        public IActionResult LoginUser([FromBody] UserLoginDTO loginData) 
+        public IActionResult LoginUser([FromBody] UserLoginDTO loginData)
         {
             try
             {
-                var existingUser = _Context.Users.FirstOrDefault(u => u.Username == loginData.Username && u.Password == loginData.Password); 
+
+                var existingUser = _Context.Users.FirstOrDefault(u => u.Username == loginData.Username);
 
 
-                if (existingUser != null) 
+                if (existingUser != null)
                 {
-                    return Ok(new { _Username = existingUser.Username }); 
-              
+                    if (BCrypt.Net.BCrypt.Verify(loginData.Password, existingUser.Password))
+                    {
+                        return Ok(new { _Username = existingUser.Username });
+                    }
+                    else
+                    {
+                        return Unauthorized("Invalid username or password");
+                    }
                 }
                 else
                 {
@@ -93,4 +102,5 @@ namespace MovieSpin_Backend_Files
         public string Username { get; set; }
         public string Password { get; set; }
     }
+
 }
