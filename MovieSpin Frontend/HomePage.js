@@ -1,4 +1,4 @@
-﻿function showHomePage(username) {
+﻿function showHomePage() {
   const app = document.getElementById("app");
   app.innerHTML = /*HTML*/ `
       <div>${HomePageButtons()}</div>

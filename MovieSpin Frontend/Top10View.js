@@ -4,10 +4,14 @@ function Top10View(){
     <div>${images()}</div>
     <div>${HeadLineTop10()}</div>
     <div>${MenuButtons()}</div>
+    <div>${InfoBox()}</div>
+    <div>${slideImageFunction()}</div>
     `;
+     SlideShow(slideIndex); 
     }
 
 
+      
 
 function HeadLineTop10(){
 return /*HTML*/ `
@@ -15,3 +19,11 @@ return /*HTML*/ `
 `;
 }
 
+function imagesBackground(){
+    return /*HTML*/ `
+          <img class="frontimage" src="image/blacks.jpg" alt="">
+          <img class="overskriftRamme" src="image/cinemaScreen.webp">
+          <img class="overskriftbilde1" src="image/cinema.webp">
+          <img class="overskriftbilde2" src="image/family.jpg">
+      `;
+  }

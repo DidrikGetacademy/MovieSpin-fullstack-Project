@@ -4,16 +4,96 @@
   background-size: cover;
 }
 
+.generatorBox{
+width: 45vh;
+height: 35vh;
+background-color: rgb(15, 18, 24);
+left: 50vh;
+top: 37vh;
+z-index: 2;
+position: absolute;
+border-radius: 10%;
+}
+
+.Generatorbox2{
+  position: relative;
+  left: 22vh;
+}
+
+.SpinRandomGenre{
+position: absolute;
+top: 31vh;
+left: 12vh;
+}
+
+h3{
+position: relative;
+left: 45px;
+bottom: 5px;
+animation: lights 5s 750ms linear infinite;
+font-size: 1.2em;
+}
+.GeneratorBtn{
+  position: relative;
+  top:3.2vh;
+  right: 5.5vh;
+  width:10vh;
+  height: 30px;
+  border-radius: 15px;
+  background-color: rgb(168, 197, 209);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.EmptyList{
+  position: relative;
+  top: 8vh;
+  right: 15.9vh;
+  width:10vh;
+  height: 30px;
+  border-radius: 15px;
+  background-color: rgb(168, 197, 209);
+  z-index: 2;
+  cursor: pointer;
+}
+
+.TitleGenerator{
+position: absolute;
+left: 33%;
+top:31vh;
+z-index: 2;
+
+}
+
+
+.RandomList{
+position: absolute;
+z-index: 3;
+left: 25%;
+color: white;
+
+}
+
+.listWheelOutLay {
+  width: 175px;
+  height: 340px;
+  position: relative;
+  left: 4.18%;
+  top: 34.2vh;
+  background-color: rgb(10, 38, 36);
+}
+
 .InventoryList {
   width: 145px;
   height: 340px;
-  background-color: rgb(22, 18, 18);
+  background-color: rgb(8, 9, 12);
   z-index: 1;
   position: absolute;
-  left: 13.8%;
-  top: 30vh;
+  left: 15.8%;
+  top: 36.7vh;
   color: lightgoldenrodyellow;
 }
+
 
 .underline {
   width: 550px;
@@ -35,11 +115,44 @@
   cursor: pointer;
 }
 
+@media screen and (max-width: 768px) {
+  .wheel-container {
+    margin-top: 10px; /* Adjust margin for smaller screens */
+    left: 0; /* Reset left position */
+  }
+
+  .spinbutton {
+    left: 0; /* Reset left position */
+  }
+
+  /* Add more adjustments as needed */
+}
+
+/* For larger screens */
+@media screen and (min-width: 1200px) {
+  .wheel-container {
+    margin-top: 20px; /* Adjust margin for larger screens */
+    left: 60px; /* Adjust left position for larger screens */
+  }
+
+  .spinbutton {
+    left: 35%; /* Adjust left position for larger screens */
+  }
+
+  /* Add more adjustments as needed */
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 98vh;
+}
+
 .frontimage {
-  width: 100%;
+  width: 97%;
   height: 98%;
   position: fixed;
-  left: 1.5%;
+  display: flex;
+  left: 1.4%;
 }
 
 .wheel-container {
@@ -52,13 +165,15 @@
   left: 60px;
 }
 
-.wheel {
-  width: 300px;
-  height: 300px;
-  border: 6px solid rgba(131, 132, 143, 0.788);
-  border-radius: 50%;
-  position: relative;
-  animation: spin 6s cubic-bezier(0.36, 2.1, 0.63, 1) infinite;
+
+
+.selectbox{
+position: relative;
+left: 5vh;
+width: 10vh;
+bottom:2.0vh;
+border-radius: 10px;
+background-color:  rgb(173, 174, 177);
 }
 
 .wheel-section {
@@ -76,8 +191,9 @@
   margin-top: 8px;
   width: 120px;
   position: relative;
-  left: 35%;
-  top: 324px;
+  left: 9vh;
+  z-index: 2;
+  top: 40.8vh;
   padding: 5px 5px;
   font-size: 18px;
   border-radius: 30px;
@@ -86,12 +202,12 @@
   color: lightblue;
   cursor: pointer;
 }
-.spinbutton2 {
+.resetbtn {
   margin-top: 8px;
   width: 120px;
   position: relative;
-  left: 220px;
-  top: 281.5px;
+  left: 26vh;
+  top: 36.5vh;
   padding: 5px 5px;
   font-size: 18px;
   border-radius: 30px;
@@ -107,14 +223,7 @@
   top: 300px;
 }
 
-.listWheelOutLay {
-  content: attr(data-genre);
-  width: 175px;
-  height: 340px;
-  position: fixed;
-  left: 3%;
-  top: 270px;
-}
+
 
 .button1 {
   position: absolute;
@@ -253,7 +362,7 @@
   width: 120px;
   position: absolute;
   left: 173vh;
-  top: 268px;
+  top: 283px;
   padding: 5px 5px;
   font-size: 18px;
   border-radius: 30px;
@@ -267,8 +376,8 @@
   margin-top: 8px;
   width: 120px;
   position: absolute;
-  left: 186.4vh;
-  top: 268px;
+  left: 186vh;
+  top: 283px;
   padding: 5px 5px;
   font-size: 18px;
   border-radius: 30px;
@@ -308,8 +417,9 @@ h1 {
 
 h2 {
   margin: auto;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
   font-weight: 300;
+  position: absolute;
   animation: lights 5s 750ms linear infinite;
 }
 
@@ -513,7 +623,7 @@ label {
   width: 200px;
   position: absolute;
   left: 151.5vh;
-  top: 269px;
+  top: 283px;
   padding: 5px 5px;
   font-size: 18px;
   border-radius: 30px;
@@ -529,7 +639,23 @@ label {
   width: 120px;
   position: absolute;
   left: 138.5vh;
-  top: 269px;
+  top: 283px;
+  padding: 5px 5px;
+  font-size: 18px;
+  border-radius: 30px;
+  border: 1px solid red;
+  background: black;
+  color: lightblue;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.FrontPage{
+  margin-top: 8px;
+  width: 120px;
+  position: absolute;
+  left: 112.5vh;
+  top: 283px;
   padding: 5px 5px;
   font-size: 18px;
   border-radius: 30px;
@@ -545,7 +671,7 @@ label {
   width: 120px;
   position: absolute;
   left: 125.5vh;
-  top: 269px;
+  top: 283px;
   padding: 5px 5px;
   font-size: 18px;
   border-radius: 30px;

@@ -1,18 +1,27 @@
 
 function streamingWebsites() {
+  
   const app = document.getElementById("app");
   app.innerHTML = `
     <div>${imagesBackground()}</div>
     <div>${InfoBox()}</div>
     <div>${slideImageFunction()}</div>
     <div>${MenuButtons()}</div>
+    <div>${title()}</div>
   `;
   SlideShow(slideIndex); 
 }
 
+function title (){
+
+return /*html*/  `
+<h2 class="title">Live Streaming Websites</h2>
+
+`;  
+}
+
 function InfoBox() { 
   return /*HTML*/ `
-    <h2 class="title">Live Streaming Websites</h2>
     <div class="StreamingBox">
       <ul class="link"><a class="link2" href="#"></a></ul>
       <ul class="Description"></ul>
@@ -33,7 +42,6 @@ function slideImageFunction() {
       <button class="next" onclick="ChangeSlide(1)">&#10095;</button>
     </div>
   `;
-
 }
 
 
