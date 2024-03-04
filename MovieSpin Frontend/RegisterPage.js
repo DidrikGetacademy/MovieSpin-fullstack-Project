@@ -39,7 +39,7 @@ function registerUser() {
     Email: email,
   };
 
-  fetch("http://localhost:5180/api/Users/register", {
+  fetch("https://t1movie.azurewebsites.net/api/Users/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

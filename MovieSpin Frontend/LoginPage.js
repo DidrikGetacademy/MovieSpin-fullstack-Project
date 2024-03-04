@@ -41,7 +41,7 @@ function LoginUser() {
     Password: LoginPassWord,
   };
 
-  fetch("http://localhost:5180/api/Users/Login", {
+  fetch("https://t1movie.azurewebsites.net/api/Users/Login", {
     // Utfører en HTTP POST forespørsel til innloggingsendepunktet.
     method: "POST",
     headers: {
