@@ -1,8 +1,11 @@
 function RegisterView() {
   const app = document.getElementById("app");
   app.innerHTML = /*HTML*/ `
+  <div class="container">
+  <img src="/image/back.png" class="GoBackimg" onclick="updateView()">
   <div id="FrontLogin"></div>
   <div class="frontpageRegister">${register()}</div>
+  </div>
   
     `;
 }
@@ -38,8 +41,8 @@ function registerUser() {
     Password: regPassword,
     Email: email,
   };
-
-  fetch("https://t1movie.azurewebsites.net/api/Users/register", {
+ 
+  fetch("http://moviespin.azurewebsites.net/api/Users/register", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

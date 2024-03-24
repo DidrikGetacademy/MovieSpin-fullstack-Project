@@ -3,10 +3,10 @@ function streamingWebsites() {
   
   const app = document.getElementById("app");
   app.innerHTML = `
-    <div>${imagesBackground()}</div>
+    <div>${images()}</div>
     <div>${InfoBox()}</div>
     <div>${slideImageFunction()}</div>
-    <div>${MenuButtons()}</div>
+    <div>${dropdownmenu()}</div>
     <div>${title()}</div>
   `;
   SlideShow(slideIndex); 
@@ -56,13 +56,9 @@ function SlideShow(n) {
   if (n > slides.length - 1) {
     slideIndex = 0
   }
-
-
   if (n < 0) {
     slideIndex = slides.length - 1
   }
-
-  
   for (i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
@@ -105,6 +101,7 @@ function ChangeSlide(n) {
 
 function imagesBackground(){
   return /*HTML*/ `
+  <img class="overskriftRamme" src="image/cinemaScreen.webp">
         <img class="frontimage" src="image/blacks.jpg" alt="">
         <img class="overskriftRamme" src="image/cinemaScreen.webp">
         <img class="overskriftbilde1" src="image/cinema.webp">

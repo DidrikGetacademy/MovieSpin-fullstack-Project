@@ -5,25 +5,75 @@
 }
 
 .generatorBox{
-width: 45vh;
+width: 48vh;
 height: 35vh;
+background-image: url("/image/back1.jpg");
 background-color: rgb(15, 18, 24);
-left: 50vh;
-top: 37vh;
+left: 42vh;
+top: 35vh;
 z-index: 2;
 position: absolute;
 border-radius: 10%;
+border-radius: 30px;
+
 }
 
 .Generatorbox2{
   position: relative;
-  left: 22vh;
+  left: 32vh;
 }
+.selectgenre{
+bottom: 163px;
+left: 1%;
+}
+.type{
+  bottom: 86px;
+  left: -90px;
+}
+.platform{
+left: -240px;
+}
+.nr1{
+left: -250px;
+}
+.nr2{
+top: -98px;
+left: -120px;
+  }
+  .nr3{
+left: 20px;
+top: -180px;
+    }
+.randomSeriesRandomMovieerror{
+  display: center;
+  position: relative;
+  left: 53.4vh;
+  align-items: center;
+  justify-content: center;
+  top: 14vh;
+}
+.randomSeriesRandomMovie{
+display: center;
+position: relative;
+left: 64vh;
+align-items: center;
+justify-content: center;
+top: 14vh;
+}
+.RandomListDescription{
+  display: center;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  left: -2.3vh;
+}
+
+
 
 .SpinRandomGenre{
 position: absolute;
 top: 31vh;
-left: 12vh;
+left: 8vh;
 }
 
 h3{
@@ -35,32 +85,44 @@ font-size: 1.2em;
 }
 .GeneratorBtn{
   position: relative;
-  top:3.2vh;
-  right: 5.5vh;
+bottom: -7vh;
+left: -28vh;
   width:10vh;
   height: 30px;
   border-radius: 15px;
   background-color: rgb(168, 197, 209);
   z-index: 2;
   cursor: pointer;
+  background-image: url("/image/back1.jpg");
+  color: rgb(23, 245, 215);
+}
+
+.GoBackimg{
+z-index:2;
+height: 25px;
+position: absolute;
+cursor: pointer;
+
 }
 
 .EmptyList{
   position: relative;
-  top: 8vh;
-  right: 15.9vh;
+  top: 6.7vh;
+   right: 55.5%;
   width:10vh;
   height: 30px;
   border-radius: 15px;
   background-color: rgb(168, 197, 209);
   z-index: 2;
   cursor: pointer;
+  background-image: url("/image/back1.jpg");
+  color: rgb(23, 245, 215);
 }
 
 .TitleGenerator{
 position: absolute;
-left: 33%;
-top:31vh;
+left:29%;
+bottom: 63vh;
 z-index: 2;
 
 }
@@ -78,20 +140,27 @@ color: white;
   width: 175px;
   height: 340px;
   position: relative;
-  left: 4.18%;
-  top: 34.2vh;
-  background-color: rgb(10, 38, 36);
+  left: 1%;
+  top: 33.2vh;
+  background-color: rgb(36, 58, 99);
+  opacity: 0.9;
+  background-image: url(./image/1.jpg);
+border-top-left-radius: 30px;
+border-bottom-left-radius: 30px;
 }
 
 .InventoryList {
+  background-image: url(./image/1.jpg);
   width: 145px;
   height: 340px;
   background-color: rgb(8, 9, 12);
   z-index: 1;
   position: absolute;
-  left: 15.8%;
-  top: 36.7vh;
+  left: 12.5%;
+  top: 35.7vh;
   color: lightgoldenrodyellow;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 
@@ -169,7 +238,7 @@ color: white;
 
 .selectbox{
 position: relative;
-left: 5vh;
+right: 10vh;
 width: 10vh;
 bottom:2.0vh;
 border-radius: 10px;
@@ -191,9 +260,9 @@ background-color:  rgb(173, 174, 177);
   margin-top: 8px;
   width: 120px;
   position: relative;
-  left: 9vh;
+  left: 1vh;
   z-index: 2;
-  top: 40.8vh;
+  top: 40vh;
   padding: 5px 5px;
   font-size: 18px;
   border-radius: 30px;
@@ -206,8 +275,8 @@ background-color:  rgb(173, 174, 177);
   margin-top: 8px;
   width: 120px;
   position: relative;
-  left: 26vh;
-  top: 36.5vh;
+  left: 20vh;
+  top: 35.6vh;
   padding: 5px 5px;
   font-size: 18px;
   border-radius: 30px;
@@ -357,35 +426,9 @@ background-color:  rgb(173, 174, 177);
   position: fixed;
 }
 
-.Logginn {
-  margin-top: 8px;
-  width: 120px;
-  position: absolute;
-  left: 173vh;
-  top: 283px;
-  padding: 5px 5px;
-  font-size: 18px;
-  border-radius: 30px;
-  border: 1px solid red;
-  background: black;
-  color: lightblue;
-  cursor: pointer;
-}
 
-.register{
-  margin-top: 8px;
-  width: 120px;
-  position: absolute;
-  left: 186vh;
-  top: 283px;
-  padding: 5px 5px;
-  font-size: 18px;
-  border-radius: 30px;
-  border: 1px solid red;
-  background: black;
-  color: lightblue;
-  cursor: pointer;
-}
+
+
 
 .FrontPageTitle {
   position: absolute;
@@ -540,21 +583,7 @@ label {
   top: 40%;
 }
 
-.HomeButton {
-  margin-top: 8px;
-  width: 120px;
-  position: absolute;
-  left: 186.5vh;
-  top: 267px;
-  padding: 5px 5px;
-  font-size: 18px;
-  border-radius: 30px;
-  border: 1px solid red;
-  background: black;
-  color: lightblue;
-  cursor: pointer;
-  z-index: 2;
-}
+
 
 .UsernameDisplay {
   z-index: 2;
@@ -564,21 +593,7 @@ label {
   color: white;
 }
 
-.Logoutbutton {
-  margin-top: 8px;
-  width: 120px;
-  position: absolute;
-  left: 186.5vh;
-  top: 305px;
-  padding: 5px 5px;
-  font-size: 18px;
-  border-radius: 30px;
-  border: 1px solid red;
-  background: black;
-  color: lightblue;
-  cursor: pointer;
-  z-index: 2;
-}
+
 
 .Back {
   margin-top: 8px;
@@ -607,7 +622,6 @@ label {
   width: 120px;
   position: absolute;
   left: 186.5vh;
-  top: 345px;
   padding: 5px 5px;
   font-size: 18px;
   border-radius: 30px;
@@ -618,28 +632,13 @@ label {
   z-index: 2;
 }
 
-.streamingWebsites {
-  margin-top: 8px;
-  width: 200px;
-  position: absolute;
-  left: 151.5vh;
-  top: 283px;
-  padding: 5px 5px;
-  font-size: 18px;
-  border-radius: 30px;
-  border: 1px solid red;
-  background: black;
-  color: lightblue;
-  cursor: pointer;
-  z-index: 2;
-}
+
 
 .Forum {
   margin-top: 8px;
   width: 120px;
   position: absolute;
   left: 138.5vh;
-  top: 283px;
   padding: 5px 5px;
   font-size: 18px;
   border-radius: 30px;
@@ -650,43 +649,13 @@ label {
   z-index: 2;
 }
 
-.FrontPage{
-  margin-top: 8px;
-  width: 120px;
-  position: absolute;
-  left: 112.5vh;
-  top: 283px;
-  padding: 5px 5px;
-  font-size: 18px;
-  border-radius: 30px;
-  border: 1px solid red;
-  background: black;
-  color: lightblue;
-  cursor: pointer;
-  z-index: 2;
-}
 
-.Top10Button {
-  margin-top: 8px;
-  width: 120px;
-  position: absolute;
-  left: 125.5vh;
-  top: 283px;
-  padding: 5px 5px;
-  font-size: 18px;
-  border-radius: 30px;
-  border: 1px solid red;
-  background: black;
-  color: lightblue;
-  cursor: pointer;
-  z-index: 2;
-}
 
 .title {
   position: absolute;
   left: 80vh;
   height: 100px;
-  top: 13.4%;
+  top: 13.45%;
 }
 
 .StreamingBox {
@@ -825,4 +794,84 @@ width: 100%
   cursor: pointer;
   z-index: 2;
 }
+
+.container2 {
+  overflow: hidden;
+  width: 100%; /* Stretch the container across the entire width */
+  height: 100px; /* Adjust the height as needed */
+  position: absolute;
+  top: 88.4vh;
+  left: 0; /* Set left to 0 to start from the left edge */
+  z-index: 3;
+}
+
+.slideshow {
+  white-space: nowrap;
+  animation: slideLeft 16s linear infinite; /* Adjust animation time as needed */
+}
+
+.slideshow img {
+  width: 200px; /* Adjust the width as needed */
+
+  display: inline-block;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(87%); /* Start from the right edge */
+  }
+  100% {
+    transform: translateX(-100%); /* Move all the way to the left edge */
+  }
+}
+
+.bilde1 {
+
+}
+
+.bilde2 {
+  height: 100px; /* Set the height of the second image */
+}
+
+.bilde3 {
+  height: 100px; /* Set the height of the second image */
+}
+
+.bilde4 {
+  height: 100px; /* Set the height of the fourth image */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  width: 97%;
+  box-sizing: border-box;
+  display: flex;
+  top: 271px;
+  left: 1.4%;
+  display: hidden;
+}
+
+
+.dropdown-content button {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  display: hidden;
+  cursor: pointer;
+  background-image: url(/image/batman.jpg);
+  color: white;
+  text-align: center;
+}
+
+
+
 

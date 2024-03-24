@@ -1,5 +1,4 @@
 ﻿
-
 updateView()
 function updateView() {
   const app = document.getElementById("app");
@@ -9,14 +8,19 @@ function updateView() {
   <div>${images()}</div>
   <div>${spinwheel()}</div>
   <div>${list()}</div>
-  <div>${MenuButtons()}</div>
   <div>${RandomGenerator()}</div>
   <div>${fetchGenres()}</div>
-  
+  <div>${Reklame()}</div>
+  <div>${dropdownmenu()}</div>
   </div>
-
     `;
 }
+
+
+
+
+
+
 
 function Title() {
   return /*HTML*/ `
@@ -24,21 +28,12 @@ function Title() {
   `;
 }
 
-function MenuButtons() {
-  return /*HTML*/ `
-  <button class="Logginn" onclick="LoginView()">Sign in</button>
-  <button Class="register" onclick="RegisterView()">Register</button>
-  <button Class="streamingWebsites" onclick="streamingWebsites()">Streaming Websites</button>
- <button class="Top10Button" onclick="Top10View()">Top 10</button>
- <button class="Forum" onclick="Cinema()">Cinema</button>
- <button class="FrontPage" onclick="updateView()">FrontPage</button>
-  `;
-}
+
 
 function images() {
   return /*HTML*/ `
-        <img class="frontimage" src="image/CinemaScreen.jpg" alt="">
-        <img class="overskriftRamme" src="image/cinemaScreen.webp">
+        <img class="frontimage" src="image/batman.jpg" alt="">
+        <img class="overskriftRamme" src="image/cinemascreen.jpg">
         <img class="overskriftbilde1" src="image/cinema.webp">
         <img class="overskriftbilde2" src="image/family.jpg">
     `;
@@ -48,15 +43,13 @@ function images() {
 
 function list() {
   return /*HTML*/ `
+  <div class=".container">
   <h3 class="SpinRandomGenre">Spin RandomGenre</h3>
-     <ul class="listWheelOutLay"></ul>
-     <div id="GenreList" class="InventoryList"></div>
-     `;
+  <ul class="listWheelOutLay"></ul>
+  <div id="GenreList" class="InventoryList"></div>
+  </div>
+  `;
 }
-
-
-
-
 
 
 
@@ -173,74 +166,142 @@ function spinwheel() {
 
 
 
+ 
+  function RandomGenerator() {
+    return /*html */ `
+    <div class="RandomList">  
+    </div>
+    <h3 class="TitleGenerator">RandomGenerator</h3>
+    <div class="generatorBox">
+        <div class="Generatorbox2">
+        <h3 class="platform">Platform</h3>
+        <select id="selectboxPlatform" class="selectbox nr1">
+                <option>viaplay</option>
+                <option>netflix</option>
+                <option>popcornTime</option>
+                <option>hbo</option>
+                <option>disney +</option>
+            </select>
+            <h3 class="type">Type</h3>
+            <select id="selectboxType" class="selectbox nr2">
+                <option>movie</option>
+                <option>series</option>
+            </select>
+            <h3 class="selectgenre" >Select Genre</h3>
+            <select  id="SelectboxGenre" class="selectbox nr3">
+                <option>action</option>
+                <option>adventure</option>
+                <option>animation</option>
+                <option>comedy</option>
+                <option>crime</option>
+                <option>documentary</option>
+                <option>drama</option>
+                <option>family</option>
+                <option>fantasy</option>
+                <option>history</option>
+                <option>horror</option>
+                <option>mystery</option>
+                <option>romance</option>
+                <option>science Fiction</option>
+                <option>thriller</option>
+                <option>war</option>
+                <option>western</option>
+            </select>
+            <button class="GeneratorBtn" onclick="GenerateRandomType()">Random</button>
+            <button class="EmptyList" onclick="ResetList()">Reset List</button>
+        </div>
+    </div>
+    
+    `;
+}
 
 
-  
-function RandomGenerator(){
-  return /*HTML*/ `
-  <div class="RandomList"></div>
-  <h3 class="TitleGenerator">RandomGenerator</h3>
-  <div class="generatorBox">
-      <div class="Generatorbox2">
-          <h3>Platform</h3>
-          <select id="selectboxPlatform" class="selectbox">
-              <option>Viaplay</option>
-              <option>Netflix</option>
-              <option>PopcornTime</option>
-              <option>Hbo</option>
-              <option>Disney +</option>
-          </select>
-          <h3>Type</h3>
-          <select id="selectboxType" class="selectbox">
-              <option>Movie</option>
-              <option>series</option>
-          </select>
-          <h3>Select Genre</h3>
-          <select id="SelectboxGenre" class="selectbox">
-              <option>Action</option>
-              <option>Adventure</option>
-              <option>Animation</option>
-              <option>Comedy</option>
-              <option>Crime</option>
-              <option>Documentary</option>
-              <option>Drama</option>
-              <option>Family</option>
-              <option>Fantasy</option>
-              <option>History</option>
-              <option>Horror</option>
-              <option>Mystery</option>
-              <option>Romance</option>
-              <option>Sciene Fiction</option>
-              <option>Thriller</option>
-              <option>War</option>
-              <option>Western</option>
-          </select>
-          <button class="GeneratorBtn" onclick="GenerateRandomType()">Random</button>
-          <button class="EmptyList" onclick="ResetList()">Reset List</button>
-         
-  </div>
-  `;}
-  
-  function ResetList(){
+function ResetList() {
     var listElement = document.querySelector(".RandomList");
     listElement.innerHTML = "";
-  }
-  
-  function GenerateRandomType(){
-  let MovieTitle = ["Narnia", "Pirates of the carribian", "The Matrix"];
-  let seriesTitle = ["Suits", "Stranger Things","Game of Thrones"];
-  var Platform = document.getElementById("selectboxPlatform").value;
-  var type = document.getElementById("selectboxType").value;
-  var genre = document.getElementById("SelectboxGenre").value;
+}
+function GenerateRandomType() {
+  var platform = document.getElementById("selectboxPlatform").value.toLowerCase();
+  var genre = document.getElementById("SelectboxGenre").value.toLowerCase();
+  var type = document.getElementById("selectboxType").value.toLowerCase();
   var listElement = document.querySelector(".RandomList");
-  if(type == "Movie"){
-    let randomMovieNumber = Math.floor(Math.random() * MovieTitle.length);
-   var randomMovie = MovieTitle[randomMovieNumber]
-   RandomTitle = randomMovie;
-  } 
-  listElement.innerHTML += /*html*/ `<li>${RandomTitle}</li>`;
-  }
-   
+  var selectedPlatform = model.genres[platform];
+  var selectedGenre = selectedPlatform ? selectedPlatform[genre] : null;
+  listElement.innerHTML = ""; 
 
-  // ordne sånn at samme genre ikke kan bli valgt 2 ganger i spin randomgenre
-  // ordne sånn at randomgenerator gir ut en valgt serie eller film  når  random trykkes
+
+
+
+
+  if (selectedGenre) {
+      if (type === "movie") {
+          let randomMovieNumber = Math.floor(Math.random() * selectedGenre.movies.length);
+          var randomMovie = selectedGenre.movies[randomMovieNumber];
+          listElement.innerHTML += `
+          <li 
+          class="randomSeriesRandomMovie">Title: ${randomMovie}
+          </li>
+       
+          `;
+       
+
+      } else if (type === "series") {
+     
+          let randomSeriesNumber = Math.floor(Math.random() * selectedGenre.series.length);
+          var randomSeries = selectedGenre.series[randomSeriesNumber];
+          listElement.innerHTML += `
+          <li class="randomSeriesRandomMovie">${randomSeries}</li>
+          `;
+      }
+  } else {
+      listElement.innerHTML += `<li class="randomSeriesRandomMovieerror" >No content available for the selected platform and genre</li>`;
+  }
+}
+
+  
+function Reklame(){
+  return /*html*/ `
+  <div class="container2">
+  <div class="slideshow">
+    <img class="bilde1" src="image/1.jpg" alt="Bilde 1">
+    <img class="bilde2" src="image/2.jpg" alt="Bilde 2">
+    <img class="bilde3" src="image/3.jpg" alt="Bilde 3">
+    <img class="bilde4" src="image/4.jpg" alt="Bilde 4">
+    <img class="bilde4" src="image/blacklist.jpg" alt="Bilde 5">
+    <img class="bilde4" src="image/suits.jpg" alt="Bilde 5">
+    <img class="bilde4" src="image/open.jpg" alt="Bilde 5">
+    <img class="bilde4" src="image/dune2.jpg" alt="Bilde 5">
+    <img class="bilde4" src="image/wakanda.jpg" alt="Bilde 5">
+    <img class="bilde4" src="image/hearth.jpg" alt="Bilde 5">
+    <img class="bilde4" src="image/lockedin.jpg" alt="Bilde 5">
+    <img class="bilde4" src="image/ava.jpg" alt="Bilde 5">
+    <img class="bilde4" src="image/spider.jpg" alt="Bilde 5">
+    <img class="bilde4" src="image/narnia.jpg" alt="Bilde 5">
+    <img class="bilde4" src="image/taken.jpg" alt="Bilde 5">
+    <img class="bilde4" src="image/peaky.jpg" alt="Bilde 5">
+
+
+  </div>
+</div>
+
+  
+  `;
+  
+  }  
+  function dropdownmenu(){
+  return /*HTML*/ `
+
+  <div class="dropdown-content">
+  <button Class="streamingWebsites" onclick="streamingWebsites()">Streaming Websites</button>
+  <button class="Top10Button" onclick="Top10View()">Cinema</button>
+  <button class="FrontPage" onclick="updateView()">FrontPage</button>
+  <button class="Logginn" onclick="LoginView()">Sign in</button>
+  <button Class="register" onclick="RegisterView()">Register</button>
+  </div>
+
+  `;
+
+}     function buttonClicked(buttonText) {
+  alert("You clicked: " + buttonText);
+  // You can add more functionality here
+}

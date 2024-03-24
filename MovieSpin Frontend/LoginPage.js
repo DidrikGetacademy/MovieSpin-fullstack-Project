@@ -3,8 +3,11 @@
 function LoginView() {
   const app = document.getElementById("app");
   app.innerHTML = /*HTML*/ `
-        <div id="FrontLogin"></div>
-        <div>${Login()}</div>
+  <div class="container">
+  <img src="/image/back.png" class="GoBackimg" onclick="updateView()">
+  <div id="FrontLogin"></div>
+  <div>${Login()}</div>
+  </div>
     `;
 }
 
@@ -40,8 +43,8 @@ function LoginUser() {
     Username: LoginUsername,
     Password: LoginPassWord,
   };
-
-  fetch("https://t1movie.azurewebsites.net/api/Users/Login", {
+ 
+  fetch("http://moviespin.azurewebsites.net/api/Users/Login", {
     // Utfører en HTTP POST forespørsel til innloggingsendepunktet.
     method: "POST",
     headers: {
